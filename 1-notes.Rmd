@@ -1,0 +1,51 @@
+---
+title: "BDA Ch. 1"
+output:
+  html_notebook: default
+---
+
+# Notes from Bayesian Data Analysis, 3rd Ed.  
+## Ch. 1  
+  
+### 1.1 The three steps of Bayesian data analysis     
+Bayesian data analysis process:  
+1. Set up a *full probability model* - a joint probability distribution for all relevant observable and unobservable quantities, consistent with knowlege about the underlying problem and data collection process.   
+2. Condition on observed data: find *posterior distribution* - the conditional probability dist. of the unobserved quantities, given unobserved data.  
+3. Evaluate fit of model and resulting posterior distribution. 
+
+An advantage of Bayesian thinking is that it facilitates more common-sense intrepretation of statistical results. For instance, a Bayesian probability interval can be intrepreted as having a high probability of containing the unknown quantity of interest. A frequentest interpretation of a confidenence interval doesn't actually mean this (though people often think it does) instead it strictly refres to a sequence of similiar inferences that may be made in repeated practive.  
+  
+### 1.2 General notation  
+$\theta$ denotes unobservable vector quantities or population parameters of interest. $\gamma$ denotesthe observed data. $\tilde{\gamma}$ denotes unknown, but potentially observable quantities.   
+  
+Commonly data are gathered on each of a set of $n$ objects or *units*, as a vector $\gamma = (\gamma_1,...,\gamma_n)$. We assume [exchangeability](https://stats.stackexchange.com/questions/3520/can-someone-explain-the-concept-of-exchangeability) - data can be reordered in the sequence without changing their joint distribution.   
+
+To research:  
+(Exchangability and de Finetti's Theorem) [http://www.stats.ox.ac.uk/~steffen/teaching/grad/definetti.pdf]  
+Are time series necissarily not exchangeable?
+    
+Explanatory variables aka covariates (entire set is $X$) - not modeled as random. If there are $k$ explanatory variables, then $X$ is a matrix with $n$ rows and $k$ columns.  
+*Hierarchical Modeling*  
+Aka multi-level modeles. Used when information is available on several different levels of observational units. Let's say two medical treatments are applied, in separate randomized experiments, to patients in different cities. With no other info available, we can treat patients within each city as exchangeable, and treat results from different cities as exchangeable.    
+  
+### 1.3 Bayesian Inference  
+  
+Bayesian probability statements are conditional on the observed value of $\gamma$: $p(\theta|\gamma)$ or $p(\tilde{\gamma}|\gamma)$. Marginal distribution is $p(*)$. $Pr(*)$ may be used to denote probability of an event.  
+  
+*Bayes' Rule*  
+To make statments about $\theta$ given $\gamma$, we need a model providing a joint probability distribution for them. The joint probability mass or density function as a product of the prior distribution $p(\theta)$ and the sampling/data distribution $p(\gamma|\theta)$ is:  
+$$p(\theta,\gamma) = p(\theta)p(\gamma|\theta)$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+

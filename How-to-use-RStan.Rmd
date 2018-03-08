@@ -1,0 +1,10 @@
+---
+title: "How to use RStan"
+output: html_notebook
+---
+https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started#how-to-use-rstan
+
+```{r}
+library(rstan)
+```
+
