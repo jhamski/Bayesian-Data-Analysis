@@ -35,6 +35,31 @@ Bayesian probability statements are conditional on the observed value of $\gamma
 *Bayes' Rule*  
 To make statments about $\theta$ given $\gamma$, we need a model providing a joint probability distribution for them. The joint probability mass or density function as a product of the prior distribution $p(\theta)$ and the sampling/data distribution $p(\gamma|\theta)$ is:  
 $$p(\theta,\gamma) = p(\theta)p(\gamma|\theta)$$
+This is the 'base case'. Where do you think you're starting from? What are your "priors" for the system?
+
+Let's say we know the value of the data $\gamma$. We can use the basic property of conditional probability to yeild the posterio density: 1.1    
+$$p(\theta|\gamma) = \frac{p(\theta, \gamma)}{p(\gamma)}=\frac{p(\theta)p(\theta|\gamma)}{p(\gamma)}$$  
+where $p(\gamma)=\sum_\theta p(\theta)p(\gamma,\theta)$, with the sum over all possible values of theta. With a fixed gamma, we can consider $p(\gamma)$ constant and get the unnormalized posterio density: 1.2  
+$$p(\theta|\gamma)\propto p(\theta)p(\gamma|\theta)$$  
+The primary task of Bayesian inference is to develop the model $p(\theta, \gamma)$ and summarize $p(\theta|\gamma)$ in appropriate ways.   
+  
+*Prediction*
+Predictive inferences - inference about an unknown observable.  
+  
+Before the data gamma are considered, we use the marginal distribution, or the *prior predictive distribution* or gamma: 1.3    
+$$p(\gamma)=\int p(\gamma,\theta)d\theta=\int p(\theta)p(\gamma|\theta)d\theta$$
+It is prior - it is not conditional on a previous observation. It is predictive - it is the distribution for a quanitity that is observable. 
+  
+Let's predict an unknown observable, $\tilde\gamma$ - the *posterior predictive distribution*. Posterior because it is conditional on the observed gamma, and predictive because we can, but have not yet, observed $\tilde\gamma$.
+1.4 
+$$p(\tilde\gamma|\gamma) = \int p(\tilde\gamma, \theta|\gamma)d\theta \\
+= \int p(\tilde\gamma|\theta,\gamma)p(\theta|\gamma)d\theta \\
+= \int p(\tilde\gamma|\theta)p(\theta|\gamma)d|theta$$
+
+the second and third lines here are the psoterior predictive distirbution as an aveage of conditional predictions over the posteriod distribution of theta. 
+
+*Likelihood*  
+
 
 
 
